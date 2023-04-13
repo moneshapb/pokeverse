@@ -1,26 +1,26 @@
 import React, {useEffect, useState} from 'react';
-import {Card} from 'react-bootstrap/Card';
-import { Alert } from 'react-bootstrap';
+import Card from 'react-bootstrap/Card';
+import Alert from 'react-bootstrap/Alert';
 
 function PokemonCard({ url, name }) {
-const [pokemon, setPokemon] = useState(null);
-const [error, setError] = useState(false);
+  const [pokemon, setPokemon] = useState(null);
+  const [error, setError] = useState(false);
 
 
   useEffect(() => {
-       getData();
+    getData();
     async function getData() {
       try {
         const response = await fetch(url);
-      const data = await response.json();
-      setPokemon({ abilities: data.abilities,
-        sprites: data.sprites });
-        } catch {
+        const data = await response.json();
+        setPokemon({
+          abilities: data.abilities,
+          sprites: data.sprites,
+        });
+      } catch {
         setError(true);
       }
-   
   }
-
 }, [url]);
 
 if (error) {

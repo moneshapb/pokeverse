@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import { Navigation } from './components/Navigation';
-import Container  from 'react-bootstrap/Container';
+import Container from 'react-bootstrap/Container';
 import { PokemonCard } from './components/PokemonCard';
-import { Alert } from 'react-bootstrap';
+import Alert from 'react-bootstrap/Alert';
 
 const LIMIT = 150;
 const pokeApi = `https://pokeapi.co/api/v2/pokemon/?limit=${LIMIT}`;
